@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhurandhar Title Track</title>
+</head>
+
+<body>
+
+    <h2>Dhurandhar Title Track</h2>
+
+    <video controls width="400">
+        <source src="./Dhurandhar.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- YouTube embed (commented as per assignment)
+    <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/pRzS9QLvgZk"
+        title="Dhurandhar - Title Track"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+    -->
+
+</body>
+</html>
+
+
+
+<!-- 
+HTML (Level 2)
+Practice Questions
+Qs1. Self-learning
+Search on the internet & learn to use the video tag in HTML. (Similar to the img tag)
+Qs2. Is video tag a semantic tag?
+Qs3. Print the following using HTML tags:
+Today is the 9th of October and 2^4 = 16 always
+Qs4. Add a new section to your portfolio page for your achievements. Mention anything
+you have achieved, competitions won, participations etc. in this section.
+It could be related to coding, tech, art, music, sports, debating etc.
+Use the following tags in some manner to achieve this:
+<section>, <ul>, <b>, <hr> etc.
+Qs5. Print the symbols for copyright & trademark on your webpage. -->
+
+
+---------------------------------------------------
+HTML <video> TAG - QUICK NOTES
+---------------------------------------------------
+
+1. Purpose:
+------------
+Used to embed videos in a web page.
+
+2. Basic Syntax:
+----------------
+<!-- Local video file -->
+<video src="video.mp4" controls></video>
+
+<!-- Online direct video URL -->
+<video src="https://www.example.com/video.mp4" controls></video>
+
+- src        → video file path (local or direct URL)
+- controls   → shows play/pause/volume bar
+- autoplay   → plays video automatically
+- loop       → plays video repeatedly
+- muted      → starts muted
+- width/height → sets size
+
+3. Examples:
+------------
+
+<!-- Local video -->
+<video width="400" height="315" controls autoplay loop muted>
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<!-- Online video URL -->
+<video width="400" height="315" controls autoplay loop muted>
+    <source src="https://www.example.com/video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<!-- YouTube or streaming sites (cannot use <video> tag directly) -->
+<!-- Use <iframe> instead for YouTube -->
+<iframe width="560" height="315"
+    src="https://www.youtube.com/embed/VIDEO_ID"
+    title="YouTube Video"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
+
+4. Notes:
+---------
+- Use <source> to provide multiple formats (mp4, webm, ogg)
+- Always include fallback text for unsupported browsers
+- Can combine attributes: controls autoplay muted loop
+- `poster="image.jpg"` shows an image before video starts
+- Online URL must be a **direct video file link**, not YouTube/Vimeo page
+- YouTube/Vimeo videos must be embedded using `<iframe>`, not `<video>`
+
+5. Supported Types:
+-------------------
+- mp4  → widely supported
+- webm → modern browsers
+- ogg  → open format
+
+6. Quick Tips:
+---------------
+- Use small videos for faster loading
+- Combine autoplay + muted for auto-play on most browsers
+- For full-width videos, use width="100%" 
+- Can style `<video>` with CSS (borders, shadows, etc.)
+- `<iframe>` allows embedding YouTube videos, but video owner must allow embedding
