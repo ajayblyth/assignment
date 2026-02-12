@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dhurandhar Title Track</title>
+    <title>Task_2</title>
 </head>
 
 <body>
 
     <section>
-    <h2>Dhurandhar Title Track</h2>
+    <h2>Countdown Video</h2><hr>
 
-    <video src="./mp4" controls width="400" height="300" type="video/mp4"
-    ></video>
+    <video src="./videoplayback.mp4" controls loop muted autoplay   poster="./poster.png"     width="400" height="300" type="video/mp4"
+    >
+        Your browser does not support the HTML5 video tag.
+
+</video>
+ 
+<!-- controls -->
 
     <!-- <video controls width="400">
         <source src="./Dhurandhar.mp4" type="video/mp4">
@@ -28,29 +33,32 @@
     </iframe>
     -->
 
-    </section>
+    </section><br><br>
 
 <section>
-    <p>Today is the 9th of October and 2^4 = 16 always</p>
+    <p>  Today is the 9<sup>th</sup> of October and 2<sup>4</sup> = 16 always
+</p>
 
-</section>
+</section><br><br>
 
 <section >
     <h1><b>Academic achievements</b></h1><hr>
     <ul>
-        <li>first</li>
-        <li>second</li>
-        <li>third</li>
+        <li>First achievement</li>
+        <li>Second achievement </li>
+        <li>Third achievement </li>
     </ul>
-</section>
+</section><br><br><br>
 
-<section>
-    <img src="trademark.png" alt="trademark" width="25px" height="25px">
+<footer>
 
-    <img src="copyright.jpg" alt="copyright" width="50px" height="50px">
+ <img src="trademark.png" alt="trademark" width="25px" height="25px">
+
+    <img src="copyright.jpg" alt="copyright" width="30px" height="30px">
 
 
-</section>
+</footer>
+
 
 </body>
 </html>
@@ -77,70 +85,92 @@ Qs5. Print the symbols for copyright & trademark on your webpage. -->
 ---------------------------------------------------
 HTML <video> TAG - QUICK NOTES
 ---------------------------------------------------
+Purpose- Used to embed videos in a web page.
 
-1. Purpose:
-------------
-Used to embed videos in a web page.
 
-2. Basic Syntax:
-----------------
-<!-- Local video file -->
+1) BASIC SYNTAX
+------------------------------------------------------------
+
+<!-- Local video -->
 <video src="video.mp4" controls></video>
 
 <!-- Online direct video URL -->
-<video src="https://www.example.com/video.mp4" controls></video>
+<video src="https://example.com/video.mp4" controls></video>
 
-- src        → video file path (local or direct URL)
-- controls   → shows play/pause/volume bar
-- autoplay   → plays video automatically
-- loop       → plays video repeatedly
-- muted      → starts muted
-- width/height → sets size
 
-3. Examples:
-------------
 
-<!-- Local video -->
-<video width="400" height="315" controls autoplay loop muted>
+2) FULL FEATURE EXAMPLE (PROFESSIONAL FORMAT)
+------------------------------------------------------------
+
+<video width="400" height="315" controls autoplay muted loop poster="thumbnail.jpg" preload="metadata">
     <source src="video.mp4" type="video/mp4">
+    <source src="video.webm" type="video/webm">
     Your browser does not support the video tag.
 </video>
 
-<!-- Online video URL -->
-<video width="400" height="315" controls autoplay loop muted>
-    <source src="https://www.example.com/video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
 
-<!-- YouTube or streaming sites (cannot use <video> tag directly) -->
-<!-- Use <iframe> instead for YouTube -->
+
+3) ATTRIBUTE EXPLANATION (ONE LINE EACH)
+------------------------------------------------------------
+
+src            → Video file path (local or direct URL)
+controls       → Shows play/pause/volume/fullscreen controls
+autoplay       → Starts video automatically on page load
+muted          → Starts video without sound (needed for autoplay)
+loop           → Repeats video continuously
+width/height   → Sets video size (better via CSS)
+poster         → Image shown before video starts
+preload        → Controls loading behavior (auto | metadata | none)
+<source>       → Provides multiple video formats
+type           → Specifies video format (video/mp4, video/webm)
+Fallback text  → Displays if browser doesn't support video
+class/id       → Used for CSS or JavaScript styling
+
+Note:WHAT WILL HAPPEN without giving video type?
+------------------------------------------------------------
+
+✔ In most modern browsers → Video will STILL work.
+✔ Browser will try to detect format from file extension (.mp4, .webm).
+✖ But detection becomes slower and less efficient.
+
+
+
+4) YOUTUBE / STREAMING VIDEOS
+------------------------------------------------------------
+
+<!-- Cannot use <video> for YouTube directly -->
+<!-- Use <iframe> instead -->
+
 <iframe width="560" height="315"
     src="https://www.youtube.com/embed/VIDEO_ID"
     title="YouTube Video"
     frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen>
 </iframe>
 
-4. Notes:
----------
-- Use <source> to provide multiple formats (mp4, webm, ogg)
-- Always include fallback text for unsupported browsers
-- Can combine attributes: controls autoplay muted loop
-- `poster="image.jpg"` shows an image before video starts
-- Online URL must be a **direct video file link**, not YouTube/Vimeo page
-- YouTube/Vimeo videos must be embedded using `<iframe>`, not `<video>`
+NOTE:
+• URL must be direct video file for <video>
+• YouTube/Vimeo require <iframe>
 
-5. Supported Types:
--------------------
-- mp4  → widely supported
-- webm → modern browsers
-- ogg  → open format
 
-6. Quick Tips:
----------------
-- Use small videos for faster loading
-- Combine autoplay + muted for auto-play on most browsers
-- For full-width videos, use width="100%" 
-- Can style `<video>` with CSS (borders, shadows, etc.)
-- `<iframe>` allows embedding YouTube videos, but video owner must allow embedding
+
+5) SUPPORTED VIDEO TYPES
+------------------------------------------------------------
+
+mp4   → Widely supported (recommended)
+webm  → Modern browsers
+ogg   → Open-source format
+
+
+
+6) QUICK BEST PRACTICES
+------------------------------------------------------------
+
+• Always use controls
+• Combine autoplay + muted for auto-play
+• Use multiple <source> formats
+• Include fallback text
+• Use poster for better UX
+• Prefer CSS for responsive sizing
+• Use width="100%" for full-width videos
+• Optimize video size for faster loading

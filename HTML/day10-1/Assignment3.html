@@ -48,43 +48,57 @@
 
     </section>
 
-    <Section>
+    <Section><br><br><br>
+
+
+
         <form action="./">
 
 <label for="name">Name:</label>
-<input type="text" placeholder="Name" name="name"><br><br><br>
+<input type="text" placeholder="Name" name="name" required
+           minlength="3"
+           maxlength="50"
+           pattern="[A-Za-z\s]+"
+                      title="Only letters and spaces allowed">
+
+                      <br><br><br>
 
 Sex: 
 
-<input type="radio" id = "male" name="gender" value="male">
-<label for="male">male</label>
+<input type="radio" id = "male" name="gender" value="male" >
+<label for="male">Male</label>
 
 <input type="radio" id = "female" name="gender" value="female">
-<label for="female">female</label><br><br>
+<label for="female">Female</label><br><br>
 
-Country:
-<select name="country"> 
+<!-- country -->
+
+    <label for="country">Country:</label>
+<select id="country" name="country"> 
     <option value="">Select an Option</Option>
     <option value="IN">India</option> 
     <option value="JP">Japan</option> 
-    <option value="UK"> Kingdom</option> 
+    <option value="UK"> United Kingdom</option> 
     <option value="CA">Canada</option> </select><br><br>
 
 
 
 <label for="msg">Message</label><br>
-<textarea rows="4" columns="5" name="msg">
+<textarea rows="4" columns="5" id="msg" required minlength="10" maxlength="300"
+placeholder="Enter at least 10 characters">
 
-</textarea>
+</textarea><br><br>
+
+   <input type="checkbox" >Subscribe? <br><br>
+        <button type="submit">Submit</button>
+  
+
+
+
 
         </form>
 
-        <input type="checkbox" >Subscribe? <br><br>
-        <button type="submit">Submit</button>
-    </Section><br><br>
-
-    <section>
-
+     
 <form action="./" >
 
   <h2>Feedback Form</h2>
