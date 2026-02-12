@@ -8,8 +8,13 @@
 <body>
     <section class="table">
 
-<table border="1">
-    <caption><b>Students Information</b></caption>
+
+
+
+<table border="1" cellspacing=" 0" cellpadding = "10">
+   <thead>
+
+     <caption><b>Students Information</b></caption>
   <tr>
     <th rowspan="6">Info</th>
     <th rowspan="2">Name</th>
@@ -21,6 +26,9 @@
     <th>House</th>
   </tr>
 
+   </thead>
+
+   
   <tr>
     <td>A</td>
     <td>Delhi</td>
@@ -52,7 +60,7 @@
 
 
 
-        <form action="./">
+        <form action="#">
 
 <label for="name">Name:</label>
 <input type="text" placeholder="Name" name="name" required
@@ -92,37 +100,52 @@ placeholder="Enter at least 10 characters">
    <input type="checkbox" >Subscribe? <br><br>
         <button type="submit">Submit</button>
   
-
+!
 
 
 
         </form>
 
      
-<form action="./" >
+        <!-- Feedback Form -->
+<form action="#" >
 
   <h2>Feedback Form</h2>
   <hr><br>
 
 
+  <!-- name -->
 <label for="name">Name</label>
-  <input type="text" placeholder="Wriew your name" name="Name"><br><br>
+  <input type="text" placeholder="Wriew your name" id="name"
+   name="name"
+           placeholder="Write your name"
+           required
+           minlength="3"
+           maxlength="50"
+           pattern="[A-Za-z\s]+"
+           title="Only letters and spaces allowed"><br><br>
 
+
+           <!-- email -->
   <label for="email">Email</label>
   <input type="text" placeholder="Wriew your email" name="email"><br><br>
 
 
 
   <label for="msg1">Message</label><br>
-<textarea rows="4" columns="5" name="msg1">
-  <label for=""></label>
+<textarea  id="msg1"
+              name="message"
+              rows="4"
+              cols="30"
+              required
+              minlength="10"
+              maxlength="300"
+              placeholder="Enter at least 10 characters">
+  
 
-</textarea>
+</textarea><br><br>
 
-
-
-
-
+        <button type="submit">Submit</button>
 
 </form>
 
