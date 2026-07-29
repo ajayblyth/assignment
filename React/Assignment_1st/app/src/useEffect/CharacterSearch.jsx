@@ -62,7 +62,6 @@ const CharacterSearch = () => {
 
   
   useEffect(() => {
-    // Don't search when the input is empty
     if (searchTerm.trim() === "") {
       setCharacters([]);
       setNoResults(false);
@@ -107,35 +106,21 @@ const CharacterSearch = () => {
         }}
       >
         {characters.map((character) => {
-          const {
-            id,
-            image,
-            name,
-            status,
-            species,
-            gender,
-            location,
-          } = character;
+          const {id,  image, name, status,  species,  gender,   location, } = character;
 
           return (
-            <div
-              key={id}
+            <div  key={id}
               style={{
                 border: "1px solid black",
                 padding: "10px",
                 width: "220px",
-              }}
-            >
+              }}  >
               <img src={image} alt={name} width="150" />
 
               <h3>{name}</h3>
-
               <p>Status: {status}</p>
-
               <p>Species: {species}</p>
-
               <p>Gender: {gender}</p>
-
               <p>Last Known Location: {location.name}</p>
             </div>
           );
