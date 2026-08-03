@@ -4,20 +4,27 @@ import Child from "./Child";
 function Parent() {
   const [count, setCount] = useState(0);
 
-  const fruits = useMemo(() => {
-    return ["Apple", "Mango", "Orange"];
+// The array values stay the same, but a new array is created on every render.
+// React.memo compares prop references, not the actual values.
+// Since the reference changes each time, the child re-renders.
+
+
+  // const fruits = ["Apple", "Banana", "Orange"]; //without useMemo
+
+    const fruits = useMemo(() => {
+    return ["Apple", "Banana", "Orange", "Grapes", "Mango", "Pineapple","Peach","papaya"];
   }, []);
 
-  // Without useMemo a new array is created every render.
-  // React.memo compares references, so the child re-renders
-  // even though the contents are the same.
-
   return (
-    <div style={{ padding: 20 }}>
-      <h2>Array Identity</h2>
+    <div>
+      {/* <h2>Without useMemo</h2> */}
+
+      <h2>With useMemo</h2>
+
+      <h3>Counter : {count}</h3>
 
       <button onClick={() => setCount(count + 1)}>
-        Counter : {count}
+        Increment Counter
       </button>
 
       <Child fruits={fruits} />

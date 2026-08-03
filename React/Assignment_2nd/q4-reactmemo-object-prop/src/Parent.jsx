@@ -5,7 +5,9 @@ function Parent() {
   const [count, setCount] = useState(0);
 
   return (
-    <div style={{ padding: 20 }}>
+    <div style={
+      { padding: 20 }
+      }>
       <button onClick={() => setCount(count + 1)}>
         Counter : {count}
       </button>

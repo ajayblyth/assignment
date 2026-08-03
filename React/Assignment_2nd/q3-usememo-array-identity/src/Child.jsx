@@ -1,6 +1,6 @@
-import { memo } from "react";
+import React from "react";
 
-const Child = memo(({ fruits }) => {
+const Child = React.memo(({ fruits }) => {
   console.log("Child Rendered");
 
   return (
@@ -16,7 +16,9 @@ const Child = memo(({ fruits }) => {
   );
 });
 
-// Removing React.memo causes the child to render whenever
-// the parent renders.
-
 export default Child;
+
+// React.memo skips unnecessary child re-renders.
+// It compares prop references and re-renders only if they change.
+// Without React.memo, the child always re-renders when the parent renders.
+

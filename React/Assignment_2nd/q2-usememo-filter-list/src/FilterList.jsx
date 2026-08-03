@@ -1,25 +1,38 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
-const items = Array.from({ length: 5000 }, (_, index) => `Item ${index + 1}`);
+const items = Array.from(
+  { length: 5000 },
+  (_, index) => `Item ${index + 1}`
+);
+
 function FilterList() {
   const [search, setSearch] = useState("");
   const [darkMode, setDarkMode] = useState(false);
 
-  // No useMemo here
+  // Without useMemo
+  // Every re-render filters the list again, even when only darkMode changes, 
+  // to prevent that use useMemo
+  /*
   const filteredItems = items.filter((item) => {
     console.log("Filtering List...");
     return item.toLowerCase().includes(search.toLowerCase());
   });
+  */
+
+  // With useMemo
+  // The filtered list is cached.
+  // Filtering runs again only when 'search' changes.
+  const filteredItems = useMemo(() => {
+    console.log("Filtering List...");
+
+    return items.filter((item) =>
+      item.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [search]);
 
   return (
-    <div
-      style={{
-        padding: "20px",
-        background: darkMode ? "#222" : "#fff",
-        color: darkMode ? "#fff" : "#000",
-      }}
-    >
-      <h2>Filter Large List (Without useMemo)</h2>
+    <div>
+      <h2>Filter Large List (With useMemo)</h2>
 
       <input
         type="text"
@@ -35,7 +48,7 @@ function FilterList() {
       <p>Total Results: {filteredItems.length}</p>
 
       <ul>
-        {filteredItems.slice(0, 20).map((item) => (
+        {filteredItems.slice(0, 30).map((item) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
